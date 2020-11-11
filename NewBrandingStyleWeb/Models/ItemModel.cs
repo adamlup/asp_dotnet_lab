@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace NewBrandingStyleWeb.Models
 {
-    public class CompanyModel
+    public class ItemModel
     {
         public string Name { get; set; }
         public string Description { get; set; }
