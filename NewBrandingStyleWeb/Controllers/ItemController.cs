@@ -11,16 +11,16 @@ namespace NewBrandingStyleWeb.Controllers
     [Route("api/[controller]")]
     public class ItemController : ControllerBase
     {
-
         public AddNewItemResponse Post(ItemModel item)
         {
-            bool isString = !string.IsNullOrEmpty(item.Description) && !string.IsNullOrEmpty(item.Name);
-            var response = new AddNewItemResponse
+            bool success = !string.IsNullOrEmpty(item.Description) && !string.IsNullOrEmpty(item.Name);
+            string message = success ? "" : "Input fields cannot be empty";
+            var res = new AddNewItemResponse
             {
-                IsValid = isString,
-                Content = isString ? "" : "Input fields cannot be empty"
+                IsValid = success,
+                Content = success ? "" : message
             };
-            return response;
+            return res;
         }
     }
 }
