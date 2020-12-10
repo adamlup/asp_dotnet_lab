@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace NewBrandingStyleWeb.Models
 {
-    public class AddNewItemResponse
+    public class AddNewItemResponse<T>
     {
         public bool IsValid { get; set; }
         public string Content { get; set; }
+        public T Data { get; set; }
     }
 }
